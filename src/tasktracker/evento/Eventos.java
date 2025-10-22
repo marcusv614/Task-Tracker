@@ -3,10 +3,13 @@ public class Eventos {
     private String data;
     private String local;
     private String nomeEvento;
-
-    @Override
-    public String toString() {
-        return "Eventos{" + "data=" + data + ", local=" + local + ", nomeEvento=" + nomeEvento + '}';
+    
+    public void mostrarEvento() {
+        System.out.println("....................................");
+        System.out.println(getData());
+        System.out.println(getLocal());
+        System.out.println(getNomeEvento());
+        System.out.println("....................................");
     }
     
     public void criarEvento(String data, String local, String nomeEvento){
