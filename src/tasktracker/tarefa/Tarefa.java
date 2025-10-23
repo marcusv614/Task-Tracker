@@ -1,5 +1,6 @@
 package tasktracker.tarefa;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import tasktracker.ui.Opcoes;
 
@@ -11,6 +12,10 @@ public class Tarefa implements Opcoes {
     private String desc;
     private String situacao;
 
+    @Override
+    public void listaArrays() {
+    }
+    
     @Override
     public void criarArray() {
         tafArray[0] = this.getData();
@@ -79,5 +84,6 @@ public class Tarefa implements Opcoes {
     public void setSituacao(String situacao) {
         this.situacao = situacao;
     }
+
 
 }

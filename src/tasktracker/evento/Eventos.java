@@ -13,6 +13,11 @@ public class Eventos implements Opcoes{
     private String situacao;
 
     @Override
+    public void listaArrays() {
+        
+    }
+    
+    @Override
     public void criarArray() {
         eventoArray[0] = getData();
         eventoArray[1] = getLocal();
@@ -80,5 +85,6 @@ public class Eventos implements Opcoes{
     public void setSituacao(String situacao) {
         this.situacao = situacao;
     }
+
 
 }
