@@ -2,9 +2,12 @@ package tasktracker.menu;
 
 import java.util.Scanner;
 import tasktracker.evento.Eventos;
+import tasktracker.tarefa.Tarefa;
 
 public final class Menu {
     Eventos ev = new Eventos();
+    Tarefa taf = new Tarefa();
+    
     public final void mostrarMenu() {
         while (true) {            
             System.out.println("""
@@ -19,8 +22,11 @@ public final class Menu {
             System.out.println("");
             if (resp == 0) {break;}
             else if (resp == 1) {
-                ev.criarEvento();
-                ev.mostrarEvento();
+                ev.criar();
+                ev.mostrar();
+            } else if (resp == 2) {
+                taf.criar();
+                taf.mostrar();
             }
         }
     }

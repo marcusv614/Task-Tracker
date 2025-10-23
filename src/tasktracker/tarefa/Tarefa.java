@@ -1,38 +1,37 @@
-package tasktracker.evento;
+package tasktracker.tarefa;
 
 import java.util.Scanner;
 import tasktracker.inter.Opcoes;
 
+public class Tarefa implements Opcoes {
 
-public class Eventos implements Opcoes{
     private String data;
-    private String local;
     private String nomeEvento;
+    private String desc;
 
-    
     @Override
     public void mostrar() {
         System.out.println("....................................");
-        System.out.println("Data " + getData());
-        System.out.println("Local: " + getLocal());
+        System.out.println("Data: " + getData());
         System.out.println("Título: " + getNomeEvento());
+        System.out.println("Descrição: " + getDesc());
         System.out.println("....................................");
     }
-    
+
     @Override
-    public void criar(){
+    public void criar() {
         Scanner sc = new Scanner(System.in);
         
-        System.out.println("Data do evento (dd/mm/aaaa): ");
+        System.out.println("Data da Tarefa: ");
         String d = sc.nextLine();
-        System.out.println("Local: ");
-        String l = sc.nextLine();
-        System.out.println("Nome do evento: ");
+        System.out.println("Nome da Tarefa: ");
         String n = sc.nextLine();
+        System.out.println("Descrição: ");
+        String desc = sc.nextLine();
         
         this.setData(d);
-        this.setLocal(l);
         this.setNomeEvento(n);
+        this.setDesc(desc);
     }
     
     public String getData() {
@@ -43,14 +42,6 @@ public class Eventos implements Opcoes{
         this.data = data;
     }
 
-    public String getLocal() {
-        return local;
-    }
-
-    public void setLocal(String local) {
-        this.local = local;
-    }
-
     public String getNomeEvento() {
         return nomeEvento;
     }
@@ -58,4 +49,14 @@ public class Eventos implements Opcoes{
     public void setNomeEvento(String nomeEvento) {
         this.nomeEvento = nomeEvento;
     }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+
 }
