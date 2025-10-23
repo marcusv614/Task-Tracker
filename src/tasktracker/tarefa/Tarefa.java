@@ -1,7 +1,7 @@
 package tasktracker.tarefa;
 
 import java.util.Scanner;
-import tasktracker.inter.Opcoes;
+import tasktracker.ui.Opcoes;
 
 public class Tarefa implements Opcoes {
     String[] tafArray = new String[4];

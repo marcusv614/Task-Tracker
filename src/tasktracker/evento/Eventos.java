@@ -1,7 +1,7 @@
 package tasktracker.evento;
 
 import java.util.Scanner;
-import tasktracker.inter.Opcoes;
+import tasktracker.ui.Opcoes;
 
 
 public class Eventos implements Opcoes{

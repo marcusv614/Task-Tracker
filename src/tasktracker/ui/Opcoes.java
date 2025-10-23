@@ -1,4 +1,4 @@
-package tasktracker.inter;
+package tasktracker.ui;
 
 public interface Opcoes {
     public abstract void mostrar();
