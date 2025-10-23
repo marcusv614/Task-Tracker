@@ -1,13 +1,11 @@
 package tasktracker;
-import tasktracker.evento.Eventos;
+import tasktracker.menu.Menu;
 
 public class TaskTracker {
 
     public static void main(String[] args) {
-        Eventos ev = new Eventos();
-        
-        ev.criarEvento();
-        ev.mostrarEvento();
+        Menu m = new Menu();
+        m.mostrarMenu();
     }
 
 }
