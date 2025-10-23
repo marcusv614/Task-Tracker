@@ -22,12 +22,14 @@ public final class Menu {
             System.out.println("");
             if (resp == 0) {break;}
             else if (resp == 1) {
-                ev.criar();
+                ev.start();
+                ev.criarArray();
                 ev.mostrar();
             } else if (resp == 2) {
-                taf.criar();
+                taf.start();
+                taf.criarArray();
                 taf.mostrar();
-            }
+            } else {System.out.println("Valor inválido");}
         }
     }
 
