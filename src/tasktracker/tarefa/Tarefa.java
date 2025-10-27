@@ -11,16 +11,6 @@ public class Tarefa implements Opcoes {
     private String situacao;
 
     @Override
-    public void mostrar() {
-        System.out.println("....................................");
-        System.out.println("Data: " + getData());
-        System.out.println("Título: " + getDesc());
-        System.out.println("Descrição: " + getNomeEvento());
-        System.out.println("Status: " + getSituacao());
-        System.out.println("....................................");
-    }
-
-    @Override
     public void start() {
         Scanner sc = new Scanner(System.in);
 

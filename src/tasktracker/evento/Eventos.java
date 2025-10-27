@@ -10,17 +10,7 @@ public class Eventos implements Opcoes{
     private String local;
     private String nomeEvento;
     private String situacao;
-
-    @Override
-    public void mostrar() {
-        System.out.println("....................................");
-        System.out.println("Data " + getData());
-        System.out.println("Local: " + getLocal());
-        System.out.println("Título: " + getNomeEvento());
-        System.out.println("Status: " + getSituacao());
-        System.out.println("....................................");
-    }
-    
+ 
     @Override
     public void start(){
         Scanner sc = new Scanner(System.in);

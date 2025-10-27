@@ -35,44 +35,52 @@ public final class Menu {
     }
 
     public final void mostrarMenu() {
+        OUTER:
         while (true) {
             System.out.println("""
-                               Digite um valor:
-                               [0] Sair
-                               [1] Adicionar Evento
-                               [2] Adicionar Tarefa
-                               [3] Mostrar eventos
-                               [4] Mostrar tarefas
-                               """);
+                            Digite um valor:
+                            [0] Sair
+                            [1] Adicionar Evento
+                            [2] Adicionar Tarefa
+                            [3] Mostrar eventos
+                            [4] Mostrar tarefas
+                            """);
             Scanner sc = new Scanner(System.in);
-
             int resp = sc.nextInt();
-            System.out.println("");
-            if (resp == 0) {
-                break;
-            } else if (resp == 1) {
-                Eventos ev = new Eventos();
-                ev.start();
-                System.out.println("");
-                System.out.println("Evento cadastrado! ");
-                System.out.println("");
-                listaEv.add(ev);
-
-            } else if (resp == 2) {
-                Tarefa taf = new Tarefa();
-                taf.start();
-                System.out.println("");
-                System.out.println("Tarefa cadastrada! ");
-                System.out.println("");
-                listaTaf.add(taf);
-
-            } else if (resp == 3 && listaEv != null && !listaEv.isEmpty()) {
-                mostrarListaEv();
-            } else if (resp == 4 && listaTaf != null && !listaTaf.isEmpty()) {
-                mostrarListaTaf();
-            } else {
-                System.out.println("Valor inválido");
-                System.out.println("");
+            switch (resp) {
+                case 0 -> {
+                    break OUTER;
+                }
+                case 1 -> {
+                    Eventos ev = new Eventos();
+                    ev.start();
+                    System.out.println("Evento cadastrado! \n");
+                    listaEv.add(ev);
+                }
+                case 2 -> {
+                    Tarefa taf = new Tarefa();
+                    taf.start();
+                    System.out.println("Tarefa cadastrada! \n");
+                    listaTaf.add(taf);
+                }
+                case 3 -> {
+                    if (!listaEv.isEmpty() && listaEv != null) {
+                        mostrarListaEv();
+                    } else {
+                        System.out.println("Nenhum evento cadastrado! \n");
+                    }
+                }
+                case 4 -> {
+                    if (!listaTaf.isEmpty() && listaTaf != null) {
+                        mostrarListaTaf();
+                    } else {
+                        System.out.println("Nenhuma lista cadastrada!\n");
+                    }
+                }
+                default -> {
+                    System.out.println("Valor inválido\n");
+                    System.out.println("");
+                }
             }
         }
     }
