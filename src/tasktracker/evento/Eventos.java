@@ -5,33 +5,21 @@ import tasktracker.ui.Opcoes;
 
 
 public class Eventos implements Opcoes{
-    String[] eventoArray =  new String[4];
     
     private String data;
     private String local;
     private String nomeEvento;
     private String situacao;
 
-    @Override
-    public void listaArrays() {
-        
-    }
-    
-    @Override
-    public void criarArray() {
-        eventoArray[0] = getData();
-        eventoArray[1] = getLocal();
-        eventoArray[2] = getNomeEvento();
-        eventoArray[3] = getSituacao();
-    }
+
     
     @Override
     public void mostrar() {
         System.out.println("....................................");
-        System.out.println("Data " + eventoArray[0]);
-        System.out.println("Local: " + eventoArray[1]);
-        System.out.println("Título: " + eventoArray[2]);
-        System.out.println("Status: " + eventoArray[3]);
+        System.out.println("Data " + getData());
+        System.out.println("Local: " + getLocal());
+        System.out.println("Título: " + getNomeEvento());
+        System.out.println("Status: " + getSituacao());
         System.out.println("....................................");
     }
     
