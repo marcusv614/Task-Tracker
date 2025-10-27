@@ -11,11 +11,6 @@ public class Tarefa implements Opcoes {
     private String situacao;
 
     @Override
-    public String toString() {
-        return "Tarefa{" + "data=" + data + ", nomeEvento=" + nomeEvento + ", desc=" + desc + ", situacao=" + situacao + '}';
-    }
-
-    @Override
     public void mostrar() {
         System.out.println("....................................");
         System.out.println("Data: " + getData());
@@ -35,7 +30,7 @@ public class Tarefa implements Opcoes {
         String n = sc.nextLine();
         System.out.println("Descrição: ");
         String desc = sc.nextLine();
-        System.out.println("Status: [P] pendente, [C] concluído, [N] não realizado");
+        System.out.println("Status: [P] pendente, [C] concluído");
         String s = sc.nextLine();
 
         this.setData(d);

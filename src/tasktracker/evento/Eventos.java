@@ -11,8 +11,6 @@ public class Eventos implements Opcoes{
     private String nomeEvento;
     private String situacao;
 
-
-    
     @Override
     public void mostrar() {
         System.out.println("....................................");
@@ -33,7 +31,7 @@ public class Eventos implements Opcoes{
         String l = sc.nextLine();
         System.out.println("Nome do evento: ");
         String n = sc.nextLine();
-        System.out.println("Status: [P] pendente, [C] concluído, [N] não realizado");
+        System.out.println("Status: [P] pendente, [C] concluído");
         String s = sc.nextLine();
         
         this.setData(d);
