@@ -38,15 +38,16 @@ public final class Menu {
         OUTER:
         while (true) {
             System.out.println("""
-                            Digite um valor:
                             [0] Sair
                             [1] Adicionar Evento
                             [2] Adicionar Tarefa
                             [3] Mostrar eventos
                             [4] Mostrar tarefas
                             """);
+
             Scanner sc = new Scanner(System.in);
             int resp = sc.nextInt();
+
             switch (resp) {
                 case 0 -> {
                     break OUTER;
@@ -64,25 +65,24 @@ public final class Menu {
                     listaTaf.add(taf);
                 }
                 case 3 -> {
-                    if (!listaEv.isEmpty() && listaEv != null) {
+                    if (listaEv != null && !listaEv.isEmpty()) {
                         mostrarListaEv();
                     } else {
                         System.out.println("Nenhum evento cadastrado! \n");
                     }
                 }
                 case 4 -> {
-                    if (!listaTaf.isEmpty() && listaTaf != null) {
+                    if (listaTaf != null && !listaTaf.isEmpty()) {
+                        boolean sairSubMenu = false;
                         mostrarListaTaf();
-                    } else {
-                        System.out.println("Nenhuma lista cadastrada!\n");
-                    }
-                }
+                                    } else {
+                                        System.out.println("Índice inválido!\n");
+                                    }
+                                }
                 default -> {
-                    System.out.println("Valor inválido\n");
-                    System.out.println("");
+                    System.out.println("Valor inválido!\n");
                 }
             }
         }
     }
-
 }

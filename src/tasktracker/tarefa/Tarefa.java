@@ -19,13 +19,13 @@ public class Tarefa implements Opcoes {
         System.out.println("Nome da Tarefa: ");
         String n = sc.nextLine();
         System.out.println("Descrição: ");
-        String desc = sc.nextLine();
+        String des = sc.nextLine();
         System.out.println("Status: [P] pendente, [C] concluído");
         String s = sc.nextLine();
 
         this.setData(d);
         this.setNomeEvento(n);
-        this.setDesc(desc);
+        this.setDesc(des);
         this.setSituacao(s);
     }
     
