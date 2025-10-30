@@ -9,8 +9,101 @@ public final class Menu {
 
     ArrayList<Tarefa> listaTaf = new ArrayList<>();
     ArrayList<Eventos> listaEv = new ArrayList<>();
+    
+    public void boasVindas() {
+        System.out.println("""
+                           ========================================
+                           ============= Agenda CLI ===============
+                           ======= Autor: Marcus Pinheiro =========
+                           ========================================
+                           """);
+    }
 
-    public void AlterTaf() {
+    public void alterEv() {
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+
+            if (!sc.hasNextInt()) {
+                sc.nextLine();
+                continue;
+            }
+
+            int resp2 = sc.nextInt();
+            sc.nextLine();
+
+            if (resp2 == 0) {
+                break;
+            } else if (resp2 == 1) {
+                System.out.println("Digite o índice do evento a ser editada. \n");
+
+                if (!sc.hasNextInt()) {
+                    sc.nextLine();
+                    continue;
+                }
+
+                int resp3 = sc.nextInt();
+                sc.nextLine();
+
+                if (resp3 < 0 || resp3 >= listaEv.size()) {
+                    System.out.println("Índice fora do intervalo. Tente novamente.\n");
+                    continue;
+                }
+
+                Eventos e = listaEv.get(resp3);
+                System.out.println("===== Evento [" + resp3 + "] =====");
+                System.out.println("Data: " + e.getData());
+                System.out.println("Local: " + e.getLocal());
+                System.out.println("Nome do Evento: " + e.getNomeEvento());
+                System.out.println("Situação: " + e.getSituacao());
+                System.out.println("=============================\n");
+                System.out.println("""
+                                                   Editar:
+                                                   [1] Data
+                                                   [2] Local
+                                                   [3] Nome
+                                                   [4] Status
+                                                   """);
+
+                if (!sc.hasNextInt()) {
+                    sc.nextLine();
+                    continue;
+                }
+
+                int resp4 = sc.nextInt();
+                sc.nextLine();
+
+                switch (resp4) {
+                    case 1 -> {
+                        System.out.println("Digite a nova data: \n");
+                        String novaData = sc.nextLine();
+                        listaEv.get(resp3).setData(novaData);
+                    }
+                    case 2 -> {
+                        System.out.println("Digite o novo local: \n");
+                        String novoLocal = sc.nextLine();
+                        listaEv.get(resp3).setNomeEvento(novoLocal);
+                    }
+                    case 3 -> {
+                        System.out.println("Digite o novo Nome: \n");
+                        String novoNome = sc.nextLine();
+                        listaEv.get(resp3).setNomeEvento(novoNome);
+                    }
+                    case 4 -> {
+                        System.out.println("Digite o novo status [P] [C]");
+                        String novoStatus = sc.nextLine();
+                        listaEv.get(resp3).setSituacao(novoStatus);
+                    }
+                    default ->
+                        System.out.println("valor inválido");
+                }
+
+                System.out.println("Tarefa atualizada !");
+                break;
+            }
+        }
+    }
+
+    public void alterTaf() {
         Scanner sc = new Scanner(System.in);
         while (true) {
 
@@ -158,6 +251,8 @@ public final class Menu {
                 case 3 -> {
                     if (listaEv != null && !listaEv.isEmpty()) {
                         mostrarListaEv();
+                        subMenu1();
+                        alterEv();
                     } else {
                         System.out.println("Nenhum evento cadastrado! \n");
                     }
@@ -166,7 +261,7 @@ public final class Menu {
                     if (listaTaf != null && !listaTaf.isEmpty()) {
                         mostrarListaTaf();
                         subMenu1();
-                        AlterTaf();
+                        alterTaf();
                     } else {
                         System.out.println("Nenhuma tarefa cadastrada!\n");
                     }
