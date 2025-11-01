@@ -1,12 +1,20 @@
 package tasktracker;
+
 import tasktracker.menu.Menu;
 
 public class TaskTracker {
 
     public static void main(String[] args) {
-        Menu m = new Menu();
-        m.boasVindas();
-        m.mostrarMenu();
+        try {
+            Menu m = new Menu();
+            m.boasVindas();
+            m.mostrarMenu();
+        } catch (Exception e) {
+            System.out.println("Opção inválida, tente denovo. \n");
+            Menu m = new Menu();
+            m.boasVindas();
+            m.mostrarMenu();
+        }
     }
 
 }
